@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAPS — やりたいことはやった方がいい｜12万人の学生コミュニティ</title>
+  <meta name="description" content="早慶・MARCH・日東駒専・関関同立の大学別LINEオープンチャット＆Instagramコミュニティ。参加者12万人以上。就活・インターン・サークル・留学など、同じ熱量の仲間と繋がれる場所。">
+  <meta name="keywords" content="学生コミュニティ,LINEオープンチャット,Instagram,早慶,MARCH,日東駒専,関関同立,就活,インターン,大学生,CAPS">
+  <meta name="author" content="CAPS">
+  <link rel="canonical" href="https://campanion.jp/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CAPS — やりたいことはやった方がいい｜12万人の学生コミュニティ">
+  <meta property="og:description" content="早慶・MARCH・日東駒専・関関同立の大学別LINEオープンチャット＆Instagramコミュニティ。参加者12万人以上。">
+  <meta property="og:url" content="https://campanion.jp/">
+  <meta property="og:image" content="https://campanion.jp/images/slide1.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CAPS — やりたいことはやった方がいい">
+  <meta name="twitter:description" content="早慶・MARCH・日東駒専・関関同立の大学別LINEオープンチャット＆Instagramコミュニティ。参加者12万人以上。">
+  <meta name="twitter:image" content="https://campanion.jp/images/slide1.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CAPS","url":"https://campanion.jp/","description":"早慶・MARCH・日東駒専・関関同立の大学別LINEオープンチャット・Instagramコミュニティ。12万人以上の学生が参加。"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; color: #04342C; background: #fff; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    :root {
+      --g50: #E1F5EE; --g100: #9FE1CB; --g400: #1D9E75;
+      --g600: #0F6E56; --g800: #085041; --g900: #04342C;
+      --p50: #FBEAF0; --p700: #993556; --muted: #4a7a6a; --r: 12px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; inset: 0 0 auto 0; z-index: 100;
+      height: 60px; padding: 0 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background .35s, box-shadow .35s;
+    }
+    nav.scrolled { background: rgba(255,255,255,.93); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(0,0,0,.07); }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-logo-text { font-family: 'DM Sans', sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: .08em; color: #fff; transition: color .35s; }
+    nav.scrolled .nav-logo-text { color: var(--g900); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.85); transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    nav.scrolled .nav-links a { color: var(--g600); }
+    nav.scrolled .nav-links a:hover { color: var(--g900); }
+    .nav-corp { border: 1px solid rgba(255,255,255,.5); border-radius: 999px; padding: 4px 14px; transition: border-color .35s; }
+    nav.scrolled .nav-corp { border-color: var(--g400); }
+    .nav-ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-ham span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background .35s; }
+    nav.scrolled .nav-ham span { background: var(--g900); }
+
+    /* HERO */
+    .hero { position: relative; height: 100svh; min-height: 560px; overflow: hidden; }
+    .slides { position: absolute; inset: 0; }
+    .slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transform: scale(1.05); transition: opacity 1.2s ease, transform 7s ease; }
+    .slide.active { opacity: 1; transform: scale(1); }
+    .slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(4,52,44,.45) 0%, rgba(4,52,44,.15) 45%, rgba(4,52,44,.62) 100%); }
+    .slide-dots { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.4); cursor: pointer; transition: background .3s, transform .3s; }
+    .dot.active { background: #fff; transform: scale(1.3); }
+    .hero-content { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 80px 6vw 60px; max-width: 760px; }
+    .hero-eyebrow { font-family: 'DM Sans', sans-serif; font-size: .68rem; letter-spacing: .2em; color: rgba(255,255,255,.7); margin-bottom: 1rem; opacity: 0; transform: translateY(14px); animation: fadeUp .8s .3s forwards; }
+    .hero-h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 1.2rem; opacity: 0; transform: translateY(18px); animation: fadeUp .9s .5s forwards; }
+    .hero-stat { display: inline-block; background: rgba(255,255,255,.18); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.3); color: #fff; border-radius: 999px; font-size: .8rem; font-weight: 500; padding: 5px 16px; margin-bottom: 1rem; opacity: 0; transform: translateY(18px); animation: fadeUp .9s .65s forwards; width: fit-content; }
+    .hero-sub { font-size: .85rem; color: rgba(255,255,255,.8); line-height: 1.9; margin-bottom: 2rem; opacity: 0; transform: translateY(18px); animation: fadeUp .9s .8s forwards; }
+    .hero-cta { display: inline-block; background: var(--g400); color: #fff; border-radius: 999px; padding: 14px 32px; font-size: .9rem; font-weight: 700; letter-spacing: .03em; width: fit-content; opacity: 0; transform: translateY(18px); animation: fadeUp .9s .95s forwards; transition: background .2s, transform .15s; }
+    .hero-cta:hover { background: var(--g600); transform: translateY(-2px); }
+    .scroll-ind { position: absolute; bottom: 32px; right: 32px; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 6px; opacity: 0; animation: fadeUp .8s 1.3s forwards; }
+    .scroll-ind span { font-family: 'DM Sans', sans-serif; font-size: .6rem; letter-spacing: .15em; color: rgba(255,255,255,.55); writing-mode: vertical-rl; }
+    .scroll-line { width: 1px; height: 40px; background: rgba(255,255,255,.3); position: relative; overflow: hidden; }
+    .scroll-line::after { content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 100%; background: #fff; animation: scrollLine 1.6s 1.4s ease-in-out infinite; }
+
+    /* SECTIONS */
+    .sec-label { font-family: 'DM Sans', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .18em; color: var(--g400); margin-bottom: .75rem; }
+    .sec-title { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; line-height: 1.4; color: var(--g900); margin-bottom: 1rem; }
+    .sec-body { font-size: .9rem; color: var(--muted); line-height: 1.9; }
+    .inner-md { max-width: 720px; margin: 0 auto; }
+    .inner-lg { max-width: 960px; margin: 0 auto; }
+
+    /* ABOUT */
+    .about { padding: 6rem 5vw; background: #fff; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .stat-card { background: var(--g50); border-radius: var(--r); padding: 1.5rem 1rem; text-align: center; }
+    .stat-num { font-family: 'DM Sans', sans-serif; font-size: 2.2rem; font-weight: 600; color: var(--g600); line-height: 1; margin-bottom: .4rem; }
+    .stat-unit { font-size: .95rem; }
+    .stat-lbl { font-size: .72rem; color: var(--g400); font-weight: 500; }
+
+    /* CONCEPT */
+    .concept { background: var(--g900); padding: 6rem 5vw; position: relative; overflow: hidden; }
+    .concept::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border-radius: 50%; background: rgba(29,158,117,.1); pointer-events: none; }
+    .concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .concept-grid .sec-label { color: var(--g100); }
+    .concept-grid .sec-title { color: #fff; }
+    .concept-grid .sec-body { color: rgba(255,255,255,.55); }
+    .bubbles { display: flex; flex-direction: column; gap: .8rem; margin-bottom: 1.5rem; }
+    .bubble { border-radius: 18px; padding: 11px 16px; font-size: .85rem; line-height: 1.6; max-width: 84%; opacity: 0; transform: translateY(12px); transition: opacity .5s, transform .5s; }
+    .bubble.visible { opacity: 1; transform: translateY(0); }
+    .bubble.left { background: rgba(255,255,255,.1); color: rgba(255,255,255,.85); align-self: flex-start; border-bottom-left-radius: 4px; }
+    .bubble.right { background: var(--g400); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; font-weight: 500; }
+    .concept-img { border-radius: var(--r); overflow: hidden; aspect-ratio: 4/5; }
+    .concept-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* JOIN */
+    .join { padding: 6rem 5vw; background: #fff; }
+    .accordion { border: 1px solid #e0ede9; border-radius: var(--r); overflow: hidden; margin-top: 2rem; }
+    .acc-item { border-bottom: 1px solid #e0ede9; }
+    .acc-item:last-child { border-bottom: none; }
+    .acc-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.4rem; background: none; border: none; cursor: pointer; text-align: left; transition: background .2s; }
+    .acc-trigger:hover { background: var(--g50); }
+    .acc-left { display: flex; align-items: center; gap: .75rem; }
+    .acc-badge { font-family: 'DM Sans', sans-serif; font-size: .75rem; font-weight: 600; background: var(--g50); color: var(--g600); border-radius: 6px; padding: 3px 10px; letter-spacing: .04em; }
+    .acc-count { font-size: .75rem; color: var(--muted); }
+    .acc-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; color: var(--g400); transition: transform .3s; }
+    .acc-trigger[aria-expanded="true"] .acc-icon { transform: rotate(180deg); }
+    .acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
+    .acc-body.open { grid-template-rows: 1fr; }
+    .acc-body-inner { overflow: hidden; }
+    .univ-list { padding: .25rem 1.4rem 1rem; }
+    .univ-row { display: flex; align-items: center; justify-content: space-between; padding: .7rem 0; border-bottom: 1px solid #f0f7f4; flex-wrap: wrap; gap: .5rem; }
+    .univ-row:last-child { border-bottom: none; }
+    .univ-name { font-size: .9rem; font-weight: 500; color: var(--g900); }
+    .link-btns { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .lbtn { display: inline-flex; align-items: center; font-size: .72rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; transition: opacity .2s, transform .15s; white-space: nowrap; }
+    .lbtn:hover { opacity: .8; transform: translateY(-1px); }
+    .lbtn-ig { background: var(--p50); color: var(--p700); }
+    .lbtn-oc { background: var(--g50); color: var(--g600); }
+
+    /* VOICE */
+    .voice { background: var(--g50); padding: 6rem 5vw; }
+    .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+    .voice-card { background: #fff; border-radius: var(--r); padding: 1.5rem; border: 1px solid #dff0e9; }
+    .voice-q { font-size: 2rem; color: var(--g100); line-height: 1; margin-bottom: .5rem; font-family: Georgia, serif; }
+    .voice-text { font-size: .87rem; color: var(--g900); line-height: 1.8; margin-bottom: .8rem; }
+    .voice-author { font-size: .75rem; color: var(--muted); font-weight: 500; }
+
+    /* SPECIAL */
+    .special { background: #fff; padding: 6rem 5vw; }
+    .special-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+    .sp-card { background: var(--g50); border-radius: var(--r); padding: 1.8rem 1.5rem; border: 1px solid #c8e9da; display: flex; flex-direction: column; gap: .75rem; }
+    .sp-badge { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .1em; padding: 3px 10px; border-radius: 999px; width: fit-content; }
+    .sp-badge-oc { background: var(--g800); color: var(--g50); }
+    .sp-badge-intern { background: #312E81; color: #EEF2FF; }
+    .sp-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--g900); line-height: 1.45; }
+    .sp-card p { font-size: .83rem; color: var(--muted); line-height: 1.85; flex: 1; }
+    .sp-link { display: inline-flex; align-items: center; font-size: .82rem; font-weight: 600; border-radius: 999px; padding: 8px 18px; width: fit-content; transition: opacity .2s, transform .15s; }
+    .sp-link:hover { opacity: .85; transform: translateY(-1px); }
+    .sp-link-green { background: var(--g400); color: #fff; }
+    .sp-link-indigo { background: #4338CA; color: #fff; }
+
+    /* RECRUIT */
+    .recruit { background: var(--g900); padding: 6rem 5vw; position: relative; overflow: hidden; }
+    .recruit::after { content: ''; position: absolute; bottom: -100px; left: -60px; width: 280px; height: 280px; border-radius: 50%; background: rgba(29,158,117,.1); pointer-events: none; }
+    .recruit-inner { position: relative; z-index: 1; }
+    .recruit .sec-label { color: var(--g100); }
+    .recruit .sec-title { color: #fff; }
+    .recruit .sec-body { color: rgba(255,255,255,.6); margin-bottom: 1.5rem; }
+    .recruit-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+    .recruit-tag { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.75); border-radius: 999px; font-size: .78rem; padding: 5px 14px; }
+    .recruit-cta { display: inline-block; background: var(--g50); color: var(--g900); border-radius: 999px; padding: 13px 32px; font-size: .9rem; font-weight: 700; transition: background .2s, transform .15s; }
+    .recruit-cta:hover { background: #fff; transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { background: #021f19; padding: 5rem 5vw 2.5rem; border-top: 1px solid rgba(255,255,255,.06); text-align: center; }
+    .footer-inner { max-width: 640px; margin: 0 auto; }
+    .footer-corp-label { font-family: 'DM Sans', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .15em; color: var(--g100); margin-bottom: 1rem; }
+    .footer-corp-title { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; color: #fff; line-height: 1.45; margin-bottom: 1rem; }
+    .footer-corp-body { font-size: .85rem; color: rgba(255,255,255,.45); line-height: 1.9; margin-bottom: 2rem; }
+    .footer-corp-btn { display: inline-block; background: var(--g400); color: #fff; border-radius: 999px; padding: 13px 32px; font-size: .88rem; font-weight: 700; transition: background .2s; }
+    .footer-corp-btn:hover { background: var(--g600); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); margin-top: 4rem; padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; text-align: left; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: .75rem; color: rgba(255,255,255,.35); transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.7); }
+    .footer-copy { font-size: .7rem; color: rgba(255,255,255,.2); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes scrollLine { 0% { top: -100%; } 100% { top: 100%; } }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-ham { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 60px 0 0 0; background: rgba(4,52,44,.97); padding: 2rem 5vw; gap: 1.5rem; z-index: 99; }
+      .nav-links.open a { font-size: 1.1rem; color: rgba(255,255,255,.85); }
+      .concept-grid { grid-template-columns: 1fr; }
+      .concept-img { display: none; }
+      .voice-grid { grid-template-columns: 1fr; }
+      .special-grid { grid-template-columns: 1fr; }
+      .scroll-ind { display: none; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .stats-grid { gap: .6rem; }
+      .stat-num { font-size: 1.7rem; }
+    }
+    @media (max-width: 480px) {
+      .hero-h1 { font-size: 2rem; }
+      .stat-num { font-size: 1.4rem; }
+      .stat-unit { font-size: .75rem; }
+      .lbtn { font-size: .68rem; padding: 4px 9px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <img src="./images/logo.png" alt="CAPS" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span class="nav-logo-text" style="display:none">CAPS</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#join">コミュニティ</a></li>
+    <li><a href="#recruit">運営に参加</a></li>
+    <li><a href="https://lp.gritters.jp/" target="_blank" class="nav-corp">企業の方へ ↗</a></li>
+  </ul>
+  <div class="nav-ham" id="ham" role="button" tabindex="0" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="slides" id="slides">
+    <div class="slide active" style="background-image:url('./images/slide1.jpg')"></div>
+    <div class="slide" style="background-image:url('./images/slide2.jpg')"></div>
+    <div class="slide" style="background-image:url('./images/slide3.jpg')"></div>
+    <div class="slide" style="background-image:url('./images/slide4.jpg')"></div>
+  </div>
+  <div class="slide-dots" id="dots">
+    <div class="dot active" onclick="goSlide(0)"></div>
+    <div class="dot" onclick="goSlide(1)"></div>
+    <div class="dot" onclick="goSlide(2)"></div>
+    <div class="dot" onclick="goSlide(3)"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">FOR COLLEGE STUDENTS</p>
+    <h1 class="hero-h1">やりたいことは<br>やった方がいい</h1>
+    <span class="hero-stat">12万人以上の学生コミュニティ</span>
+    <p class="hero-sub">早慶・MARCH・日東駒専・関関同立<br>LINEオープンチャット10万人超 ＋ Instagram 2万人超</p>
+    <a href="#join" class="hero-cta">自分の大学を探す →</a>
+  </div>
+  <div class="scroll-ind">
+    <div class="scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<section class="about">
+  <div class="inner-lg">
+    <p class="sec-label reveal">WHAT IS CAPS</p>
+    <h2 class="sec-title reveal d1">大学の枠を越えた、<br>リアルな学生コミュニティ</h2>
+    <p class="sec-body reveal d2" style="max-width:560px; margin-bottom:0">
+      LINEオープンチャット と Instagram で、就活・インターン・サークル・留学、なんでも話せる場所。参加無料・退会自由。
+    </p>
+    <div class="stats-grid">
+      <div class="stat-card reveal d1">
+        <div class="stat-num"><span class="count" data-target="10">0</span><span class="stat-unit">万+</span></div>
+        <div class="stat-lbl">LINEオープンチャット参加者</div>
+      </div>
+      <div class="stat-card reveal d2">
+        <div class="stat-num"><span class="count" data-target="2">0</span><span class="stat-unit">万+</span></div>
+        <div class="stat-lbl">Instagramフォロワー</div>
+      </div>
+      <div class="stat-card reveal d3">
+        <div class="stat-num"><span class="count" data-target="15">0</span></div>
+        <div class="stat-lbl">大学・キャンパス</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="concept">
+  <div class="inner-lg">
+    <div class="concept-grid">
+      <div>
+        <p class="sec-label reveal">CONCEPT</p>
+        <h2 class="sec-title reveal d1">「あとで」は<br>来ない。</h2>
+        <div class="bubbles" id="bubbles">
+          <div class="bubble left">インターン気になるけど<br>一人じゃ不安で…</div>
+          <div class="bubble left">面白いことしたいけど<br>周りに同じ人がいない</div>
+          <div class="bubble right">同じ熱量の人、<br>絶対ここにいる。</div>
+        </div>
+        <p class="sec-body reveal">行動できる仲間と繋がることで、最初の一歩が踏み出しやすくなる。</p>
+      </div>
+      <div class="concept-img reveal d2">
+        <img src="./images/concept.jpg" alt="一緒に作業する学生たち">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="inner-md">
+    <p class="sec-label reveal">JOIN</p>
+    <h2 class="sec-title reveal d1">大学を選んで参加する</h2>
+    <div class="accordion reveal d2">
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+          <div class="acc-left"><span class="acc-badge">早慶</span><span class="acc-count">2大学</span></div>
+          <span class="acc-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner"><div class="univ-list">
+          <div class="univ-row"><span class="univ-name">早稲田</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/waseda_caps/" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E6%97%A9%E7%A8%B2%E7%94%B0%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">慶應</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/keio_caps/" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E6%85%B6%E6%87%89%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+          <div class="acc-left"><span class="acc-badge">MARCH</span><span class="acc-count">5大学</span></div>
+          <span class="acc-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner"><div class="univ-list">
+          <div class="univ-row"><span class="univ-name">明治</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/meiji_caps/" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E6%98%8E%E6%B2%BB%E5%A4%A7%E5%AD%A6%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">青山学院</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/aogaku_caps/" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E9%9D%92%E5%AD%A6%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">立教</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/rikkyo_caps/" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E7%AB%8B%E6%95%99%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">中央</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/chuo_caps/" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E4%B8%AD%E5%A4%AE%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">法政</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/hosei_caps/" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E6%B3%95%E6%94%BF%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+          <div class="acc-left"><span class="acc-badge">日東駒専</span><span class="acc-count">4大学</span></div>
+          <span class="acc-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner"><div class="univ-list">
+          <div class="univ-row"><span class="univ-name">日本大学</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/nichidai_caps" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E6%97%A5%E5%A4%A7%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">東洋</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/toyodai_caps" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E6%9D%B1%E6%B4%8B%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">駒澤</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/komazawa_caps" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E9%A7%92%E6%BE%A4%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">専修</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/senshu_caps" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E5%B0%82%E4%BF%AE%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+        </div></div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+          <div class="acc-left"><span class="acc-badge">関関同立</span><span class="acc-count">4大学</span></div>
+          <span class="acc-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner"><div class="univ-list">
+          <div class="univ-row"><span class="univ-name">関西大学</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/kandai_caps" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E9%96%A2%E8%A5%BF%E5%A4%A7%E5%AD%A6%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">関西学院</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/kanngaku_caps" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E9%96%A2%E8%A5%BF%E5%AD%A6%E9%99%A2%E5%A4%A7%E5%AD%A6%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">同志社</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/doshisha_caps" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E5%90%8C%E5%BF%97%E7%A4%BE%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+          <div class="univ-row"><span class="univ-name">立命館</span><div class="link-btns"><a class="lbtn lbtn-ig" href="https://www.instagram.com/ritsumeikan_caps" target="_blank">Instagram</a><a class="lbtn lbtn-oc" href="https://openchat.line.me/jp/search?keyword=%E7%AB%8B%E5%91%BD%E9%A4%A8%E3%80%80CAPS" target="_blank">オープンチャット</a></div></div>
+        </div></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="inner-lg">
+    <p class="sec-label reveal">VOICE</p>
+    <h2 class="sec-title reveal d1">参加者の声</h2>
+    <div class="voice-grid">
+      <div class="voice-card reveal d1">
+        <div class="voice-q">"</div>
+        <p class="voice-text">大学の友達とは違う話ができる。他大の子と話すだけで、自分の当たり前が全然違うって気づけた。</p>
+        <p class="voice-author">法政大学 2年</p>
+      </div>
+      <div class="voice-card reveal d2">
+        <div class="voice-q">"</div>
+        <p class="voice-text">サークルでも授業でも出会えないタイプの人と繋がれた。なんか刺激になる人が多い。</p>
+        <p class="voice-author">立教大学 1年</p>
+      </div>
+      <div class="voice-card reveal d1">
+        <div class="voice-q">"</div>
+        <p class="voice-text">留学に行きたくて情報を探してたら、同じ国に行った先輩をここで見つけて直接話を聞けた。</p>
+        <p class="voice-author">青山学院大学 2年</p>
+      </div>
+      <div class="voice-card reveal d2">
+        <div class="voice-q">"</div>
+        <p class="voice-text">入学したての頃、大学外の繋がりが欲しくて入った。今では一番仲いい友達と出会えた場所になってる。</p>
+        <p class="voice-author">慶應義塾大学 3年</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="special">
+  <div class="inner-lg">
+    <p class="sec-label reveal">就活・キャリアサポート</p>
+    <h2 class="sec-title reveal d1">就活も、インターンも、<br>CAPSで動き出せる</h2>
+    <div class="special-grid">
+      <div class="sp-card reveal d1">
+        <span class="sp-badge sp-badge-oc">LINE オープンチャット</span>
+        <h3>就活CAPSオープンチャット</h3>
+        <p>就職活動に特化したオープンチャット。ES添削・面接対策・業界情報など、就活を戦う学生同士でリアルな情報交換ができる場所。</p>
+        <a class="sp-link sp-link-green" href="https://openchat.line.me/jp/search?keyword=%E5%B0%B1%E6%B4%BB%E3%80%80CAPS" target="_blank" rel="noopener">参加する →</a>
+      </div>
+      <div class="sp-card reveal d2">
+        <span class="sp-badge sp-badge-intern">長期インターン</span>
+        <h3>Gritters Intern</h3>
+        <p>CAPSが運営する長期インターンマッチングサービス。スタートアップから大企業まで、やりたいことで選べるインターン先と出会える。</p>
+        <a class="sp-link sp-link-indigo" href="https://intern.gritters.jp/" target="_blank" rel="noopener">インターンを探す →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="recruit" id="recruit">
+  <div class="inner-md recruit-inner">
+    <p class="sec-label reveal">JOIN THE TEAM</p>
+    <h2 class="sec-title reveal d1">動かす側に、<br>なってみない？</h2>
+    <p class="sec-body reveal d2">参加するだけじゃなく、つくる側へ。SNS運用・イベント企画・渉外など、やりたいことで関われる。運営メンバー随時募集中。</p>
+    <div class="recruit-tags reveal d2">
+      <span class="recruit-tag">SNS運用</span>
+      <span class="recruit-tag">イベント企画</span>
+      <span class="recruit-tag">渉外・営業</span>
+      <span class="recruit-tag">デザイン</span>
+      <span class="recruit-tag">コンテンツ制作</span>
+    </div>
+    <a class="recruit-cta reveal d3" href="https://forms.gle/xB5CSHBhLnnXBKWe9" target="_blank" rel="noopener">運営に応募する →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-corp-label">FOR COMPANIES</p>
+    <h2 class="footer-corp-title">CAPSを通じて、<br>学生と出会いませんか</h2>
+    <p class="footer-corp-body">
+      LINEオープンチャット10万人超・Instagram 2万人超の学生コミュニティ。<br>
+      インターン集客・採用・イベント告知など、<br>
+      学生との接点づくりをサポートする法人向けプランをご用意しています。
+    </p>
+    <a class="footer-corp-btn" href="https://lp.gritters.jp/" target="_blank" rel="noopener">企業向けページを見る →</a>
+    <div class="footer-bottom">
+      <ul class="footer-links">
+        <li><a href="#recruit">運営メンバー募集</a></li>
+        <li><a href="https://intern.gritters.jp/" target="_blank" rel="noopener">Gritters Intern</a></li>
+        <li><a href="https://lp.gritters.jp/" target="_blank" rel="noopener">企業の方へ</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 CAPS All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  // hamburger
+  const ham = document.getElementById('ham');
+  const nl  = document.getElementById('navLinks');
+  ham.addEventListener('click', () => nl.classList.toggle('open'));
+  ham.addEventListener('keydown', e => e.key === 'Enter' && nl.classList.toggle('open'));
+  nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nl.classList.remove('open')));
+
+  // slideshow
+  const slides = document.querySelectorAll('.slide');
+  const dots   = document.querySelectorAll('.dot');
+  let cur = 0;
+  function goSlide(n) {
+    slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active'); dots[cur].classList.add('active');
+  }
+  setInterval(() => goSlide(cur + 1), 4500);
+
+  // reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // countup
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, t = +el.dataset.target;
+      let v = 0;
+      const tick = setInterval(() => {
+        v = Math.min(v + t / (1400 / 16), t);
+        el.textContent = Math.round(v);
+        if (v >= t) clearInterval(tick);
+      }, 16);
+      cio.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.count').forEach(el => cio.observe(el));
+
+  // bubbles
+  const bubblesEl = document.getElementById('bubbles');
+  const bio = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) return;
+    document.querySelectorAll('.bubble').forEach((b, i) => setTimeout(() => b.classList.add('visible'), i * 320));
+    bio.unobserve(bubblesEl);
+  }, { threshold: 0.3 });
+  bio.observe(bubblesEl);
+
+  // accordion
+  function toggleAcc(btn) {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.nextElementSibling.classList.toggle('open', !open);
+  }
+</script>
+</body>
+</html>
